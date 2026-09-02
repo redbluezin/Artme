@@ -84,6 +84,13 @@ def helpers():
 # HOME
 # =========================
 
+@app.route("/sitemap.xml")
+def sitemap():
+    return send_from_directory(".", "sitemap.xml")
+
+@app.route("/robots.txt")
+def robots():
+    return send_from_directory(".", "robots.txt")
 @app.route("/")
 def home():
 
