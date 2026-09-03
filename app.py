@@ -215,7 +215,7 @@ def helpers():
 def favicon():
 
     return send_file(
-        BASE_DIR / "favicon.ico"
+        BASE_DIR / "favicon.png"
     )
 
 @app.route("/sitemap.xml")
