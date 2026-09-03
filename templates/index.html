@@ -1547,11 +1547,430 @@
 
 </section>
 
-
-
 <section class="app-details">
 
 
     <p class="description">
 
         {{ app.description }}
+
+    </p>
+
+
+    <!-- =====================
+         SCREENSHOTS
+    ===================== -->
+
+    {% if app.screenshots %}
+
+
+    <div class="screenshots-section">
+
+
+        <div class="screenshots-title">
+
+            Screenshots
+
+        </div>
+
+
+        <div
+            class="screenshots"
+            id="screenshots"
+        >
+
+
+            {% for screenshot in app.screenshots %}
+
+
+            <img
+                class="screenshot"
+                src="/screenshots/{{ screenshot }}"
+                alt="Screenshot de {{ app.name }}"
+                draggable="false"
+            >
+
+
+            {% endfor %}
+
+
+        </div>
+
+
+    </div>
+
+
+    {% endif %}
+
+
+
+    <div
+        class="details-grid"
+        style="margin-top: 30px;"
+    >
+
+
+        <div class="detail">
+
+
+            <span class="detail-label">
+
+                Versão
+
+            </span>
+
+
+            <span class="detail-value">
+
+                {{ app.version }}
+
+            </span>
+
+
+        </div>
+
+
+
+        <div class="detail">
+
+
+            <span class="detail-label">
+
+                Tamanho
+
+            </span>
+
+
+            <span class="detail-value">
+
+                {{ app.size }}
+
+            </span>
+
+
+        </div>
+
+
+
+        <div class="detail">
+
+
+            <span class="detail-label">
+
+                Android
+
+            </span>
+
+
+            <span class="detail-value">
+
+                {{ app.android }}
+
+            </span>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <a
+        class="download-button"
+        href="/download/{{ app.id }}"
+    >
+
+        DOWNLOAD
+
+    </a>
+
+
+</section>
+
+
+{% elif page == "download" %}
+
+
+<!-- =====================
+     DOWNLOAD
+===================== -->
+
+<a
+    class="back"
+    href="/app/{{ app.id }}"
+>
+
+    ← Voltar para {{ app.name }}
+
+</a>
+
+
+
+<div class="download-box">
+
+
+    <img
+        class="icon"
+        src="{{ icon_url(app) }}"
+        alt="{{ app.name }}"
+    >
+
+
+    <h1>
+
+        Download {{ app.name }}
+
+    </h1>
+
+
+    <p>
+
+        Versão {{ app.version }}
+
+        ·
+
+        {{ app.size }}
+
+        <br>
+
+        Android {{ app.android }}
+
+    </p>
+
+
+    {% if apk_exists %}
+
+
+    <a
+        class="download-button"
+        href="/get/{{ app.id }}"
+    >
+
+        ⬇ DOWNLOAD APK
+
+    </a>
+
+
+    {% else %}
+
+
+    <div class="warning">
+
+        O download deste aplicativo
+        ainda não está disponível.
+
+    </div>
+
+
+    {% endif %}
+
+
+</div>
+
+
+{% endif %}
+
+
+</main>
+
+
+
+<script>
+
+
+    /* =========================
+       PESQUISA
+    ========================= */
+
+
+    const form =
+
+        document.getElementById(
+            "searchForm"
+        );
+
+
+    const input =
+
+        document.getElementById(
+            "searchInput"
+        );
+
+
+    if (form && input) {
+
+
+        form.addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+                pesquisar();
+
+            }
+        );
+
+
+        input.addEventListener(
+            "input",
+            pesquisar
+        );
+
+
+    }
+
+
+    function pesquisar() {
+
+
+        const texto =
+
+            input.value
+                .trim()
+                .toLowerCase();
+
+
+        const apps =
+
+            document.querySelectorAll(
+                ".searchable"
+            );
+
+
+        apps.forEach(function(app) {
+
+
+            const nome =
+
+                app.dataset.name || "";
+
+
+            if (
+                nome.includes(texto)
+            ) {
+
+                app.style.display = "";
+
+            }
+
+            else {
+
+                app.style.display =
+                    "none";
+
+            }
+
+
+        });
+
+
+    }
+
+
+    /* =========================
+       CARROSSEL
+       DRAG COM MOUSE
+    ========================= */
+
+
+    const carousel =
+
+        document.getElementById(
+            "screenshots"
+        );
+
+
+    if (carousel) {
+
+
+        let isDown = false;
+
+        let startX;
+
+        let scrollLeft;
+
+
+        carousel.addEventListener(
+            "mousedown",
+            function(event) {
+
+                isDown = true;
+
+                carousel.classList.add(
+                    "dragging"
+                );
+
+
+                startX =
+                    event.pageX -
+                    carousel.offsetLeft;
+
+
+                scrollLeft =
+                    carousel.scrollLeft;
+
+            }
+        );
+
+
+        carousel.addEventListener(
+            "mouseleave",
+            function() {
+
+                isDown = false;
+
+            }
+        );
+
+
+        carousel.addEventListener(
+            "mouseup",
+            function() {
+
+                isDown = false;
+
+            }
+        );
+
+
+        carousel.addEventListener(
+            "mousemove",
+            function(event) {
+
+
+                if (!isDown) {
+
+                    return;
+
+                }
+
+
+                event.preventDefault();
+
+
+                const x =
+                    event.pageX -
+                    carousel.offsetLeft;
+
+
+                const walk =
+                    (x - startX) * 1.5;
+
+
+                carousel.scrollLeft =
+                    scrollLeft - walk;
+
+            }
+        );
+
+    }
+
+
+</script>
+
+
+</body>
+
+</html>
