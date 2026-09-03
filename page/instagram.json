@@ -1,0 +1,15 @@
+{
+    "instagram": {
+        "name": "Instagran",
+        "developer": "Meta",
+        "version": "6.16.1",
+        "size": "147 MB",
+        "android": "9+",
+        "rating": 4.5,
+        "Categoria":190,
+        "description": "Instagram é uma rede social online de compartilhamento de fotos e vídeos entre os seus usuários, que permite aplicar filtros digitais e compartilhá-los em uma variedade de serviços de redes sociais, como Facebook, Twitter, Tumblr e Flickr.[6] Originalmente, uma característica distintiva era a limitação das fotos para uma forma quadrada, semelhante ao Kodak Instamatic e de câmeras Polaroid, em contraste com a relação a proporção de tela de 16:9 tipicamente usada por câmeras de dispositivos móveis. Contudo, desde a versão 7.5, lançada em agosto de 2015, podem ser enviadas mídias em qualquer proporção. Os vídeos foram permitidos na rede em junho de 2013, com um limite de 15 segundos e uma resolução fixa de 640x640; desde julho de 2015, permite-se o envio de vídeos em 1080p, e pode-se também publicar gravações de até 60 segundos, desde janeiro de 2016. Foi criado pelo americano Kevin Systrom e pelo paulista Mike Krieger e lançado em fevereiro de 2010. O app originalmente se chamava Burbn, e era possível fazer fotos, check-ins e planos para o final de semana. O programa atraiu investimentos de US$ 500 mil, e em outubro de 2010 foi renomeado para Instagram. Com isso, passou a focar na funcionalidade de aplicar filtros às imagens e tornou-se uma rede social de fato.",
+        "icon": "minecraft.png",
+        "screenshots":["minecraft/a1.jpg","minecraft/a2.jpg","minecraft/a3.jpg"],
+        "download": "https://www.mediafire.com/file/qpxo4opqmugad0i/minecraft.apk/file"
+    }
+}
