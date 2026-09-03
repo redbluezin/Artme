@@ -211,6 +211,14 @@ def helpers():
 # =========================
 # SITEMAP
 # =========================
+@app.route("/ads.txt")
+def ads_txt():
+
+    return send_from_directory(
+        BASE_DIR,
+        "ads.txt"
+    )
+
 @app.route("/favicon.png")
 def favicon():
 
