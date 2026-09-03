@@ -2,9 +2,7 @@ from flask import Flask, render_template, abort, redirect, send_file, send_from_
 from pathlib import Path
 import json
 
-
 app = Flask(__name__)
-
 
 BASE_DIR = Path(__file__).resolve().parent
 
@@ -12,20 +10,21 @@ PAGE_DIR = BASE_DIR / "page"
 ICON_DIR = BASE_DIR / "icons"
 SCREENSHOT_DIR = BASE_DIR / "screenshots"
 
+# categoria.json fica em ~/categoria.json
+CATEGORY_FILE = BASE_DIR / "categoria.json"
+
 
 # =========================
 # CATEGORIAS
 # =========================
 
-CATEGORY_FILE = Path.home() / "categoria.json"
-
-
 def carregar_categorias():
 
-    try:
+    if not CATEGORY_FILE.is_file():
+        print(f"Arquivo de categorias não encontrado: {CATEGORY_FILE}")
+        return {}
 
-        if not CATEGORY_FILE.is_file():
-            return {}
+    try:
 
         dados = json.loads(
             CATEGORY_FILE.read_text(
@@ -60,15 +59,14 @@ def carregar_categorias():
 
 def pegar_nome_categoria(numero):
 
-    categorias = carregar_categorias()
-
     try:
-
         numero = int(numero)
 
     except (ValueError, TypeError):
 
         return None
+
+    categorias = carregar_categorias()
 
     for nome, categoria_id in categorias.items():
 
@@ -77,13 +75,6 @@ def pegar_nome_categoria(numero):
             return nome
 
     return None
-
-
-def pegar_id_categoria(nome):
-
-    categorias = carregar_categorias()
-
-    return categorias.get(nome)
 
 
 # =========================
@@ -106,10 +97,26 @@ def carregar_apps():
 
             for app_id, info in dados.items():
 
+                if not isinstance(info, dict):
+                    continue
+
                 app_data = dict(info)
 
                 app_data["id"] = app_id
                 app_data["_arquivo"] = arquivo
+
+                # Normaliza a categoria
+                if "Categoria" in app_data:
+
+                    try:
+
+                        app_data["Categoria"] = int(
+                            app_data["Categoria"]
+                        )
+
+                    except (ValueError, TypeError):
+
+                        app_data["Categoria"] = None
 
                 apps.append(app_data)
 
@@ -140,27 +147,31 @@ def pegar_app(app_id):
 @app.context_processor
 def helpers():
 
-    def icon_url(app):
+    def icon_url(app_data):
 
         nome = Path(
-            app.get(
+            app_data.get(
                 "icon",
-                f"{app['id']}.png"
+                f"{app_data['id']}.png"
             )
         ).name
 
         return f"/icons/{nome}"
 
 
-    def category_name(app):
+    def category_name(app_data):
 
-        categoria = app.get("Categoria")
+        categoria = app_data.get(
+            "Categoria"
+        )
 
         if categoria is None:
 
             return "Sem categoria"
 
-        nome = pegar_nome_categoria(categoria)
+        nome = pegar_nome_categoria(
+            categoria
+        )
 
         if nome:
 
@@ -169,9 +180,11 @@ def helpers():
         return "Categoria desconhecida"
 
 
-    def category_url(app):
+    def category_url(app_data):
 
-        categoria = app.get("Categoria")
+        categoria = app_data.get(
+            "Categoria"
+        )
 
         try:
 
@@ -253,7 +266,7 @@ def home():
 
 
 # =========================
-# CATEGORIAS
+# TODAS AS CATEGORIAS
 # =========================
 
 @app.route("/categorias")
@@ -263,7 +276,7 @@ def categorias():
 
     categorias = sorted(
         categorias.items(),
-        key=lambda x: x[1]
+        key=lambda item: item[1]
     )
 
     return render_template(
@@ -274,17 +287,17 @@ def categorias():
 
 
 # =========================
-# PÁGINA DE UMA CATEGORIA
+# UMA CATEGORIA
 # =========================
 
 @app.route("/categoria/<int:categoria_id>")
 def categoria(categoria_id):
 
-    nome = pegar_nome_categoria(
+    categoria_nome = pegar_nome_categoria(
         categoria_id
     )
 
-    if not nome:
+    if not categoria_nome:
 
         abort(404)
 
@@ -294,17 +307,11 @@ def categoria(categoria_id):
 
     for app_data in apps:
 
-        try:
+        categoria = app_data.get(
+            "Categoria"
+        )
 
-            app_categoria = int(
-                app_data.get("Categoria")
-            )
-
-        except (ValueError, TypeError):
-
-            continue
-
-        if app_categoria == categoria_id:
+        if categoria == categoria_id:
 
             apps_categoria.append(
                 app_data
@@ -314,7 +321,7 @@ def categoria(categoria_id):
         "index.html",
         page="category",
         categoria_id=categoria_id,
-        categoria_nome=nome,
+        categoria_nome=categoria_nome,
         apps_categoria=apps_categoria
     )
 
@@ -366,7 +373,7 @@ def pagina_download(app_id):
 
 
 # =========================
-# REDIRECIONAR PARA DOWNLOAD
+# DOWNLOAD
 # =========================
 
 @app.route("/get/<app_id>")
@@ -452,4 +459,4 @@ if __name__ == "__main__":
         host="0.0.0.0",
         port=8000,
         debug=True
-    )
+)
