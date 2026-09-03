@@ -211,7 +211,7 @@ def helpers():
 # =========================
 # SITEMAP
 # =========================
-@app.route("/favicon.ico")
+@app.route("/favicon.png")
 def favicon():
 
     return send_file(
