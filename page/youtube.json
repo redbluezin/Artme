@@ -1,0 +1,20 @@
+{
+    "youtube": {
+        "name": "YouTube",
+        "developer": "Google LLC",
+        "rating": 3.8,
+        "Categoria": 190,
+        "version": "Atual",
+        "size": "194 MB",
+        "android": "Varia conforme o dispositivo",
+        "description": "Assista a vídeos, acompanhe seus canais favoritos, descubra novos conteúdos, inscreva-se em canais e compartilhe vídeos com outras pessoas.",
+        "icon": "youtube.png",
+        "screenshots": [
+            "youtube/a1.png",
+            "youtube/a2.png",
+            "youtube/a3.png",
+            "youtube/a4.png"
+        ],
+        "download": ""
+    }
+}
