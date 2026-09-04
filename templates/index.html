@@ -4,20 +4,27 @@
 
 <head>
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2484199966977140"
-        crossorigin="anonymous"></script>
+    <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2484199966977140"
+        crossorigin="anonymous"
+    ></script>
+
 
     <meta charset="UTF-8">
+
 
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0"
     >
 
+
     <meta
         name="description"
         content="Redzin é um distribuidor de aplicativos e jogos para Android. Encontre e baixe seus aplicativos favoritos."
     >
+
 
     <title>
 
@@ -37,6 +44,18 @@
 
             {{ categoria_nome }} — Redzin
 
+        {% elif page == "contact" %}
+
+            Contato — Redzin
+
+        {% elif page == "terms" %}
+
+            Termos de Uso — Redzin
+
+        {% elif page == "privacy" %}
+
+            Política de Privacidade — Redzin
+
         {% else %}
 
             Redzin
@@ -45,6 +64,7 @@
 
     </title>
 
+
     <link
         rel="icon"
         type="image/png"
@@ -52,1079 +72,16 @@
     >
 
 
-    <style>
-
-        * {
-
-            box-sizing: border-box;
-
-            margin: 0;
-
-            padding: 0;
-
-        }
-
-
-        body {
-
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
-
-            background: #f5f6f8;
-
-            color: #18191d;
-
-        }
-
-
-        a {
-
-            color: inherit;
-
-            text-decoration: none;
-
-        }
-
-
-        /* =====================
-           TOPO
-        ===================== */
-
-        .topbar {
-
-            background: white;
-
-            border-bottom:
-                1px solid #e5e6ea;
-
-            padding:
-                18px 22px 0;
-
-            position: sticky;
-
-            top: 0;
-
-            z-index: 10;
-
-        }
-
-
-        /* =====================
-           LOGO
-        ===================== */
-
-        .logo {
-
-            display: block;
-
-            width: fit-content;
-
-            margin:
-                0 auto 14px;
-
-            font-size: 25px;
-
-            font-weight: 900;
-
-            color: #5865f2;
-
-            letter-spacing: -0.5px;
-
-        }
-
-
-        /* =====================
-           PESQUISA
-        ===================== */
-
-        .search {
-
-            width: 100%;
-
-            max-width: 650px;
-
-            margin:
-                0 auto 15px;
-
-            position: relative;
-
-        }
-
-
-        .search input {
-
-            width: 100%;
-
-            height: 44px;
-
-            border:
-                1px solid #dddfe4;
-
-            border-radius: 13px;
-
-            padding:
-                0 45px
-                0 15px;
-
-            outline: none;
-
-            font-size: 15px;
-
-            background: #f7f7f8;
-
-        }
-
-
-        .search input:focus {
-
-            border-color: #5865f2;
-
-            background: white;
-
-        }
-
-
-        .search-icon {
-
-            position: absolute;
-
-            right: 14px;
-
-            top: 11px;
-
-            font-size: 19px;
-
-        }
-
-
-        /* =====================
-           ABAS
-        ===================== */
-
-        .tabs {
-
-            width: 100%;
-
-            max-width: 650px;
-
-            margin: 0 auto;
-
-            display: flex;
-
-            height: 48px;
-
-        }
-
-
-        .tab {
-
-            flex: 1;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            color: #777b84;
-
-            font-size: 14px;
-
-            font-weight: 700;
-
-            position: relative;
-
-            transition: .15s;
-
-        }
-
-
-        .tab:hover {
-
-            color: #5865f2;
-
-        }
-
-
-        .tab.active {
-
-            color: #5865f2;
-
-        }
-
-
-        .tab.active::after {
-
-            content: "";
-
-            position: absolute;
-
-            bottom: 0;
-
-            left: 20%;
-
-            right: 20%;
-
-            height: 3px;
-
-            border-radius:
-                3px 3px 0 0;
-
-            background: #5865f2;
-
-        }
-
-
-        /* =====================
-           CONTAINER
-        ===================== */
-
-        .container {
-
-            width:
-                min(
-                    1000px,
-                    calc(100% - 30px)
-                );
-
-            margin:
-                30px auto
-                60px;
-
-        }
-
-
-        .section {
-
-            margin-bottom: 40px;
-
-        }
-
-
-        .section-title {
-
-            font-size: 22px;
-
-            margin-bottom: 17px;
-
-        }
-
-
-        /* =====================
-           APPS POPULARES
-        ===================== */
-
-        .popular-grid {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 15px;
-
-        }
-
-
-        .popular-card {
-
-            background: white;
-
-            border:
-                1px solid #e5e6ea;
-
-            border-radius: 16px;
-
-            padding: 18px;
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 14px;
-
-            transition: 0.15s;
-
-        }
-
-
-        .popular-card:hover {
-
-            transform:
-                translateY(-2px);
-
-            box-shadow:
-                0 5px 18px
-                rgba(0,0,0,.06);
-
-        }
-
-
-        /* =====================
-           ÍCONES
-        ===================== */
-
-        .icon {
-
-            width: 64px;
-
-            height: 64px;
-
-            border-radius: 15px;
-
-            object-fit: cover;
-
-            background: #e9ebef;
-
-            flex-shrink: 0;
-
-        }
-
-
-        .small-icon {
-
-            width: 52px;
-
-            height: 52px;
-
-            border-radius: 13px;
-
-        }
-
-
-        /* =====================
-           TEXTO
-        ===================== */
-
-        .app-name {
-
-            font-size: 16px;
-
-            font-weight: 700;
-
-            margin-bottom: 5px;
-
-        }
-
-
-        .developer {
-
-            color: #777b84;
-
-            font-size: 13px;
-
-        }
-
-
-        .rating {
-
-            margin-top: 7px;
-
-            font-size: 13px;
-
-        }
-
-
-        /* =====================
-           LISTA
-        ===================== */
-
-        .app-list {
-
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 10px;
-
-        }
-
-
-        .app-row {
-
-            background: white;
-
-            border:
-                1px solid #e5e6ea;
-
-            border-radius: 14px;
-
-            padding:
-                13px 16px;
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 14px;
-
-            transition: .15s;
-
-        }
-
-
-        .app-row:hover {
-
-            transform:
-                translateY(-2px);
-
-            box-shadow:
-                0 5px 18px
-                rgba(0,0,0,.06);
-
-        }
-
-
-        .row-info {
-
-            flex: 1;
-
-        }
-
-
-        .arrow {
-
-            font-size: 22px;
-
-            color: #92959d;
-
-        }
-
-
-        /* =====================
-           CATEGORIA DO APP
-        ===================== */
-
-        .app-category {
-
-            display: inline-block;
-
-            margin-top: 10px;
-
-            padding:
-                6px 10px;
-
-            border-radius: 9px;
-
-            background: #eef0ff;
-
-            color: #5865f2;
-
-            font-size: 12px;
-
-            font-weight: 700;
-
-        }
-
-
-        .app-category:hover {
-
-            background: #e3e6ff;
-
-        }
-
-
-        /* =====================
-           CATEGORIAS
-        ===================== */
-
-        .category-grid {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
-            gap: 15px;
-
-        }
-
-
-        .category-card {
-
-            background: white;
-
-            border:
-                1px solid #e5e6ea;
-
-            border-radius: 16px;
-
-            padding: 20px;
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 15px;
-
-            transition: .15s;
-
-        }
-
-
-        .category-card:hover {
-
-            transform:
-                translateY(-2px);
-
-            box-shadow:
-                0 5px 18px
-                rgba(0,0,0,.06);
-
-        }
-
-
-        .category-icon {
-
-            width: 52px;
-
-            height: 52px;
-
-            border-radius: 14px;
-
-            background: #eef0ff;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            font-size: 24px;
-
-            flex-shrink: 0;
-
-        }
-
-
-        .category-info {
-
-            flex: 1;
-
-        }
-
-
-        .category-name {
-
-            font-size: 17px;
-
-            font-weight: 700;
-
-            margin-bottom: 5px;
-
-        }
-
-
-        .category-number {
-
-            font-size: 12px;
-
-            color: #858891;
-
-        }
-
-
-        .category-arrow {
-
-            font-size: 22px;
-
-            color: #92959d;
-
-        }
-
-
-        /* =====================
-           PÁGINA DO APP
-        ===================== */
-
-        .back {
-
-            display: inline-block;
-
-            margin-bottom: 22px;
-
-            color: #62656d;
-
-            font-size: 15px;
-
-        }
-
-
-        .app-header {
-
-            background: white;
-
-            border:
-                1px solid #e5e6ea;
-
-            border-radius: 18px;
-
-            padding: 28px;
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 24px;
-
-            width: 100%;
-
-        }
-
-
-        .app-header .icon {
-
-            width: 110px;
-
-            height: 110px;
-
-            border-radius: 23px;
-
-        }
-
-
-        .app-header > div {
-
-            flex: 1;
-
-            min-width: 0;
-
-        }
-
-
-        .app-header h1 {
-
-            font-size: 30px;
-
-            margin-bottom: 7px;
-
-        }
-
-
-        .app-details {
-
-            margin-top: 15px;
-
-            background: white;
-
-            border:
-                1px solid #e5e6ea;
-
-            border-radius: 18px;
-
-            padding: 25px;
-
-            width: 100%;
-
-        }
-
-
-        .description {
-
-            line-height: 1.6;
-
-            color: #4f525a;
-
-            margin-bottom: 25px;
-
-        }
-
-
-        /* =====================
-           SCREENSHOTS
-        ===================== */
-
-        .screenshots-section {
-
-            margin-top: 30px;
-
-        }
-
-
-        .screenshots-title {
-
-            font-size: 20px;
-
-            font-weight: 700;
-
-            margin-bottom: 15px;
-
-        }
-
-
-        .screenshots {
-
-            display: flex;
-
-            gap: 14px;
-
-            overflow-x: auto;
-
-            overflow-y: hidden;
-
-            padding:
-                4px 2px
-                12px;
-
-            scroll-snap-type: x mandatory;
-
-            scrollbar-width: thin;
-
-            cursor: grab;
-
-            -webkit-overflow-scrolling: touch;
-
-        }
-
-
-        .screenshots:active {
-
-            cursor: grabbing;
-
-        }
-
-
-        .screenshot {
-
-            flex:
-                0 0 260px;
-
-            height: 460px;
-
-            object-fit: cover;
-
-            border-radius: 15px;
-
-            border:
-                1px solid #e1e2e6;
-
-            background: #e9ebef;
-
-            scroll-snap-align: start;
-
-            user-select: none;
-
-            -webkit-user-drag: none;
-
-        }
-
-
-        /* =====================
-           DETALHES
-        ===================== */
-
-        .details-grid {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            border-top:
-                1px solid #ececef;
-
-            border-bottom:
-                1px solid #ececef;
-
-            margin-bottom: 25px;
-
-        }
-
-
-        .detail {
-
-            padding: 17px 10px;
-
-        }
-
-
-        .detail + .detail {
-
-            border-left:
-                1px solid #ececef;
-
-        }
-
-
-        .detail-label {
-
-            display: block;
-
-            color: #858891;
-
-            font-size: 12px;
-
-            margin-bottom: 5px;
-
-        }
-
-
-        .detail-value {
-
-            font-weight: 700;
-
-        }
-
-
-        /* =====================
-           BOTÃO
-        ===================== */
-
-        .download-button {
-
-            display: block;
-
-            width: 100%;
-
-            border: 0;
-
-            border-radius: 13px;
-
-            background: #5865f2;
-
-            color: white;
-
-            padding: 16px;
-
-            font-size: 16px;
-
-            font-weight: 800;
-
-            text-align: center;
-
-            cursor: pointer;
-
-            transition: .15s;
-
-        }
-
-
-        .download-button:hover {
-
-            background: #4752c4;
-
-        }
-
-
-        /* =====================
-           DOWNLOAD
-        ===================== */
-
-        .download-box {
-
-            max-width: 600px;
-
-            margin:
-                70px auto;
-
-            background: white;
-
-            border:
-                1px solid #e5e6ea;
-
-            border-radius: 20px;
-
-            padding: 35px;
-
-            text-align: center;
-
-        }
-
-
-        .download-box .icon {
-
-            width: 90px;
-
-            height: 90px;
-
-            margin-bottom: 18px;
-
-        }
-
-
-        .download-box h1 {
-
-            margin-bottom: 8px;
-
-        }
-
-
-        .download-box p {
-
-            color: #70737b;
-
-            line-height: 1.5;
-
-            margin-bottom: 25px;
-
-        }
-
-
-        .warning {
-
-            background: #fff5d6;
-
-            color: #765d00;
-
-            padding: 12px;
-
-            border-radius: 10px;
-
-            font-size: 14px;
-
-        }
-
-
-        .empty {
-
-            background: white;
-
-            border:
-                1px dashed #d5d7dc;
-
-            padding: 35px;
-
-            text-align: center;
-
-            border-radius: 15px;
-
-            color: #777b84;
-
-        }
-
-
-        /* =====================
-           MOBILE
-        ===================== */
-
-        @media (max-width: 700px) {
-
-            .topbar {
-
-                padding:
-                    15px 14px 0;
-
-            }
-
-
-            .logo {
-
-                font-size: 23px;
-
-                margin-bottom: 12px;
-
-            }
-
-
-            .search {
-
-                margin-bottom: 12px;
-
-            }
-
-
-            .tabs {
-
-                height: 46px;
-
-            }
-
-
-            .popular-grid {
-
-                grid-template-columns: 1fr;
-
-            }
-
-
-            .category-grid {
-
-                grid-template-columns: 1fr;
-
-            }
-
-
-            .app-header {
-
-                align-items:
-                    flex-start;
-
-                padding: 22px;
-
-            }
-
-
-            .app-header .icon {
-
-                width: 85px;
-
-                height: 85px;
-
-                border-radius: 19px;
-
-            }
-
-
-            .app-header h1 {
-
-                font-size: 24px;
-
-            }
-
-
-            .details-grid {
-
-                grid-template-columns: 1fr;
-
-            }
-
-
-            .detail + .detail {
-
-                border-left: 0;
-
-                border-top:
-                    1px solid #ececef;
-
-            }
-
-
-            /* =====================
-               SCREENSHOTS MOBILE
-            ===================== */
-
-            .screenshot {
-
-                flex:
-                    0 0 75%;
-
-                width: 75%;
-
-                height: auto;
-
-                max-height: 430px;
-
-                aspect-ratio: 9 / 16;
-
-                object-fit: cover;
-
-            }
-
-        }
-
-    </style>
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
 
 </head>
 
 
 <body>
 
-
-<!-- =====================
-     TOPO
-===================== -->
 
 <header class="topbar">
 
@@ -1151,6 +108,7 @@
             autocomplete="off"
         >
 
+
         <span class="search-icon">
 
             🔍
@@ -1159,10 +117,6 @@
 
     </form>
 
-
-    <!-- =====================
-         ABAS
-    ===================== -->
 
     <nav class="tabs">
 
@@ -1199,10 +153,6 @@
 {% if page == "home" %}
 
 
-<!-- =====================
-     HOME
-===================== -->
-
 <section class="section">
 
 
@@ -1228,7 +178,6 @@
             href="/app/{{ app.id }}"
         >
 
-
             <img
                 class="icon small-icon"
                 src="{{ icon_url(app) }}"
@@ -1237,7 +186,6 @@
 
 
             <div>
-
 
                 <div class="app-name">
 
@@ -1259,9 +207,7 @@
 
                 </div>
 
-
             </div>
-
 
         </a>
 
@@ -1275,19 +221,18 @@
     {% else %}
 
 
-        <div class="empty">
+    <div class="empty">
 
-            Nenhum aplicativo
-            adicionado ainda.
+        Nenhum aplicativo
+        adicionado ainda.
 
-        </div>
+    </div>
 
 
     {% endif %}
 
 
 </section>
-
 
 
 <section class="section">
@@ -1315,7 +260,6 @@
             href="/app/{{ app.id }}"
         >
 
-
             <img
                 class="icon small-icon"
                 src="{{ icon_url(app) }}"
@@ -1324,7 +268,6 @@
 
 
             <div class="row-info">
-
 
                 <div class="app-name">
 
@@ -1343,7 +286,6 @@
 
                 </div>
 
-
             </div>
 
 
@@ -1352,7 +294,6 @@
                 →
 
             </div>
-
 
         </a>
 
@@ -1366,12 +307,12 @@
     {% else %}
 
 
-        <div class="empty">
+    <div class="empty">
 
-            Nenhum aplicativo
-            adicionado ainda.
+        Nenhum aplicativo
+        adicionado ainda.
 
-        </div>
+    </div>
 
 
     {% endif %}
@@ -1382,10 +323,6 @@
 
 {% elif page == "categories" %}
 
-
-<!-- =====================
-     CATEGORIAS
-===================== -->
 
 <a
     class="back"
@@ -1421,7 +358,6 @@
             href="/categoria/{{ numero }}"
         >
 
-
             <div class="category-icon">
 
                 📂
@@ -1430,7 +366,6 @@
 
 
             <div class="category-info">
-
 
                 <div class="category-name">
 
@@ -1445,7 +380,6 @@
 
                 </div>
 
-
             </div>
 
 
@@ -1454,7 +388,6 @@
                 →
 
             </div>
-
 
         </a>
 
@@ -1483,10 +416,6 @@
 
 {% elif page == "category" %}
 
-
-<!-- =====================
-     UMA CATEGORIA
-===================== -->
 
 <a
     class="back"
@@ -1523,7 +452,6 @@
             href="/app/{{ app.id }}"
         >
 
-
             <img
                 class="icon small-icon"
                 src="{{ icon_url(app) }}"
@@ -1532,7 +460,6 @@
 
 
             <div class="row-info">
-
 
                 <div class="app-name">
 
@@ -1551,7 +478,6 @@
 
                 </div>
 
-
             </div>
 
 
@@ -1560,7 +486,6 @@
                 →
 
             </div>
-
 
         </a>
 
@@ -1588,12 +513,8 @@
 </section>
 
 
-{% elif page == "app" %}
+{% elif page == "contact" %}
 
-
-<!-- =====================
-     APP
-===================== -->
 
 <a
     class="back"
@@ -1604,6 +525,498 @@
 
 </a>
 
+
+<section class="info-page">
+
+
+    <h1>
+
+        Contato
+
+    </h1>
+
+
+    <p>
+
+        Tem alguma dúvida, sugestão, encontrou algum problema
+        ou deseja entrar em contato com o Redzin?
+        Você pode falar comigo através dos canais abaixo.
+
+    </p>
+
+
+    <div class="contact-box">
+
+
+        <div class="contact-item">
+
+
+            <div class="contact-icon">
+
+                📧
+
+            </div>
+
+
+            <div>
+
+                <div class="contact-label">
+
+                    E-mail
+
+                </div>
+
+
+                <div class="contact-value">
+
+                    <a
+                        href="mailto:locksothy@gmail.com"
+                    >
+
+                        locksothy@gmail.com
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="contact-item">
+
+
+            <div class="contact-icon">
+
+                💬
+
+            </div>
+
+
+            <div>
+
+                <div class="contact-label">
+
+                    Discord
+
+                </div>
+
+
+                <div class="contact-value">
+
+                    <a
+                        href="https://discord.gg/gBvzpxgPru"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        Entrar no servidor do Discord
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+{% elif page == "terms" %}
+
+
+<a
+    class="back"
+    href="/"
+>
+
+    ← Voltar
+
+</a>
+
+
+<section class="info-page">
+
+
+    <h1>
+
+        Termos de Uso
+
+    </h1>
+
+
+    <p class="last-updated">
+
+        Última atualização: 4 de setembro de 2026
+
+    </p>
+
+
+    <h2>
+
+        1. Sobre o Redzin
+
+    </h2>
+
+
+    <p>
+
+        O Redzin é uma plataforma destinada à apresentação
+        e distribuição de aplicativos e jogos para dispositivos
+        Android.
+
+    </p>
+
+
+    <h2>
+
+        2. Aceitação dos termos
+
+    </h2>
+
+
+    <p>
+
+        Ao acessar ou utilizar o Redzin, você concorda com
+        estes Termos de Uso. Caso não concorde com algum
+        dos termos apresentados, recomendamos que não
+        utilize o site.
+
+    </p>
+
+
+    <h2>
+
+        3. Uso do site
+
+    </h2>
+
+
+    <p>
+
+        O usuário deve utilizar o Redzin de maneira legal,
+        responsável e de acordo com a legislação aplicável.
+
+    </p>
+
+
+    <p>
+
+        Não é permitido utilizar o site para tentar prejudicar
+        seu funcionamento, sua infraestrutura ou outros usuários.
+
+    </p>
+
+
+    <h2>
+
+        4. Aplicativos e conteúdo de terceiros
+
+    </h2>
+
+
+    <p>
+
+        Os aplicativos, jogos, nomes, marcas, imagens e outros
+        conteúdos apresentados no Redzin podem pertencer aos
+        seus respectivos desenvolvedores ou proprietários.
+
+    </p>
+
+
+    <p>
+
+        A presença de um aplicativo no Redzin não significa
+        necessariamente que o Redzin seja o desenvolvedor
+        ou proprietário daquele aplicativo.
+
+    </p>
+
+
+    <h2>
+
+        5. Links externos
+
+    </h2>
+
+
+    <p>
+
+        O Redzin pode utilizar links para serviços externos,
+        incluindo serviços de hospedagem de arquivos.
+        Esses serviços possuem seus próprios termos e
+        políticas de privacidade.
+
+    </p>
+
+
+    <h2>
+
+        6. Disponibilidade
+
+    </h2>
+
+
+    <p>
+
+        O conteúdo, os aplicativos e as funcionalidades do
+        Redzin podem ser alterados, atualizados ou removidos
+        a qualquer momento.
+
+    </p>
+
+
+    <h2>
+
+        7. Alterações dos termos
+
+    </h2>
+
+
+    <p>
+
+        Estes Termos de Uso podem ser modificados futuramente.
+        A versão mais recente estará disponível nesta página.
+
+    </p>
+
+
+    <h2>
+
+        8. Contato
+
+    </h2>
+
+
+    <p>
+
+        Para dúvidas ou questões relacionadas a estes termos,
+        acesse a página de
+
+        <a href="/contato">
+
+            Contato
+
+        </a>.
+
+    </p>
+
+
+</section>
+
+
+{% elif page == "privacy" %}
+
+
+<a
+    class="back"
+    href="/"
+>
+
+    ← Voltar
+
+</a>
+
+
+<section class="info-page">
+
+
+    <h1>
+
+        Política de Privacidade
+
+    </h1>
+
+
+    <p class="last-updated">
+
+        Última atualização: 4 de setembro de 2026
+
+    </p>
+
+
+    <h2>
+
+        1. Introdução
+
+    </h2>
+
+
+    <p>
+
+        Esta Política de Privacidade explica como o Redzin
+        trata informações relacionadas à utilização do site.
+
+    </p>
+
+
+    <h2>
+
+        2. Informações fornecidas pelo usuário
+
+    </h2>
+
+
+    <p>
+
+        A navegação nas páginas públicas do Redzin não exige
+        que o usuário forneça informações pessoais diretamente
+        ao site.
+
+    </p>
+
+
+    <p>
+
+        Caso você entre em contato através do e-mail ou de
+        outros canais disponibilizados pelo Redzin, as
+        informações fornecidas poderão ser utilizadas para
+        responder à sua solicitação.
+
+    </p>
+
+
+    <h2>
+
+        3. Cookies e tecnologias semelhantes
+
+    </h2>
+
+
+    <p>
+
+        O Redzin pode utilizar cookies e tecnologias
+        semelhantes fornecidos por serviços de terceiros.
+
+    </p>
+
+
+    <p>
+
+        Esses serviços podem utilizar informações relacionadas
+        à navegação para funcionamento, medição de desempenho
+        e personalização de publicidade, de acordo com suas
+        próprias políticas.
+
+    </p>
+
+
+    <h2>
+
+        4. Publicidade
+
+    </h2>
+
+
+    <p>
+
+        O Redzin utiliza ou poderá utilizar serviços de
+        publicidade de terceiros, incluindo o Google AdSense.
+
+    </p>
+
+
+    <p>
+
+        Esses serviços podem utilizar cookies, identificadores
+        e outras tecnologias para exibir anúncios, medir seu
+        desempenho e fornecer publicidade relevante.
+
+    </p>
+
+
+    <h2>
+
+        5. Serviços de terceiros
+
+    </h2>
+
+
+    <p>
+
+        O Redzin pode conter links para sites e serviços
+        externos. Ao acessar esses serviços, o usuário estará
+        sujeito às respectivas políticas de privacidade e
+        termos de uso.
+
+    </p>
+
+
+    <h2>
+
+        6. Segurança
+
+    </h2>
+
+
+    <p>
+
+        São adotadas medidas razoáveis para manter o
+        funcionamento e a segurança do site. Entretanto,
+        nenhum sistema conectado à internet pode garantir
+        segurança absoluta.
+
+    </p>
+
+
+    <h2>
+
+        7. Alterações desta política
+
+    </h2>
+
+
+    <p>
+
+        Esta Política de Privacidade poderá ser atualizada
+        quando houver mudanças no funcionamento do Redzin,
+        nos serviços utilizados ou nas práticas relacionadas
+        à privacidade.
+
+    </p>
+
+
+    <h2>
+
+        8. Contato
+
+    </h2>
+
+
+    <p>
+
+        Caso tenha dúvidas sobre esta Política de Privacidade,
+        entre em contato através da página de
+
+        <a href="/contato">
+
+            Contato
+
+        </a>.
+
+    </p>
+
+
+</section>
+
+
+{% elif page == "app" %}
+
+
+<a
+    class="back"
+    href="/"
+>
+
+    ← Voltar
+
+</a>
 
 
 <section class="app-header">
@@ -1672,10 +1085,6 @@
     </p>
 
 
-    <!-- =====================
-         SCREENSHOTS
-    ===================== -->
-
     {% if app.screenshots %}
 
 
@@ -1718,7 +1127,6 @@
     {% endif %}
 
 
-
     <div
         class="details-grid"
         style="margin-top: 30px;"
@@ -1745,7 +1153,6 @@
         </div>
 
 
-
         <div class="detail">
 
 
@@ -1764,7 +1171,6 @@
 
 
         </div>
-
 
 
         <div class="detail">
@@ -1790,7 +1196,6 @@
     </div>
 
 
-
     <a
         class="download-button"
         href="/download/{{ app.id }}"
@@ -1807,10 +1212,6 @@
 {% elif page == "download" %}
 
 
-<!-- =====================
-     DOWNLOAD
-===================== -->
-
 <a
     class="back"
     href="/app/{{ app.id }}"
@@ -1819,7 +1220,6 @@
     ← Voltar para {{ app.name }}
 
 </a>
-
 
 
 <div class="download-box">
@@ -1890,200 +1290,93 @@
 </main>
 
 
+<!-- =====================
+     RODAPÉ
+===================== -->
 
-<script>
+<footer class="footer">
 
 
-    /* =========================
-       PESQUISA
-    ========================= */
+    <div class="footer-inner">
 
 
-    const form =
+        <div class="footer-brand">
 
-        document.getElementById(
-            "searchForm"
-        );
 
+            <strong>
 
-    const input =
+                Redzin
 
-        document.getElementById(
-            "searchInput"
-        );
+            </strong>
 
 
-    if (form && input) {
+            <span>
 
+                Distribuição de aplicativos e jogos para Android.
 
-        form.addEventListener(
-            "submit",
-            function(event) {
+            </span>
 
-                event.preventDefault();
 
-                pesquisar();
+        </div>
 
-            }
-        );
 
+        <div class="footer-links">
 
-        input.addEventListener(
-            "input",
-            pesquisar
-        );
 
+            <a href="/">
 
-    }
+                Home
 
+            </a>
 
-    function pesquisar() {
 
+            <a href="/categorias">
 
-        const texto =
+                Categorias
 
-            input.value
-                .trim()
-                .toLowerCase();
+            </a>
 
 
-        const apps =
+            <a href="/contato">
 
-            document.querySelectorAll(
-                ".searchable"
-            );
+                Contato
 
+            </a>
 
-        apps.forEach(function(app) {
 
+            <a href="/termos">
 
-            const nome =
+                Termos de Uso
 
-                app.dataset.name || "";
+            </a>
 
 
-            if (
-                nome.includes(texto)
-            ) {
+            <a href="/privacidade">
 
-                app.style.display = "";
+                Política de Privacidade
 
-            }
+            </a>
 
-            else {
 
-                app.style.display =
-                    "none";
+        </div>
 
-            }
 
+        <div class="footer-copy">
 
-        });
+            © 2026 Redzin. Todos os direitos reservados.
 
+        </div>
 
-    }
 
+    </div>
 
-    /* =========================
-       CARROSSEL
-       DRAG COM MOUSE
-    ========================= */
 
+</footer>
 
-    const carousel =
 
-        document.getElementById(
-            "screenshots"
-        );
-
-
-    if (carousel) {
-
-
-        let isDown = false;
-
-        let startX;
-
-        let scrollLeft;
-
-
-        carousel.addEventListener(
-            "mousedown",
-            function(event) {
-
-                isDown = true;
-
-                carousel.classList.add(
-                    "dragging"
-                );
-
-
-                startX =
-                    event.pageX -
-                    carousel.offsetLeft;
-
-
-                scrollLeft =
-                    carousel.scrollLeft;
-
-            }
-        );
-
-
-        carousel.addEventListener(
-            "mouseleave",
-            function() {
-
-                isDown = false;
-
-            }
-        );
-
-
-        carousel.addEventListener(
-            "mouseup",
-            function() {
-
-                isDown = false;
-
-            }
-        );
-
-
-        carousel.addEventListener(
-            "mousemove",
-            function(event) {
-
-
-                if (!isDown) {
-
-                    return;
-
-                }
-
-
-                event.preventDefault();
-
-
-                const x =
-                    event.pageX -
-                    carousel.offsetLeft;
-
-
-                const walk =
-                    (x - startX) * 1.5;
-
-
-                carousel.scrollLeft =
-                    scrollLeft - walk;
-
-            }
-        );
-
-    }
-
-
-</script>
+<script
+    src="{{ url_for('static', filename='script.js') }}"
+></script>
 
 
 </body>
