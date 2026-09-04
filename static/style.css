@@ -1,0 +1,1339 @@
+* {
+
+    box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f5f6f8;
+
+    color: #18191d;
+
+}
+
+
+a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+/* =====================
+   TOPO
+===================== */
+
+.topbar {
+
+    background: white;
+
+    border-bottom:
+        1px solid #e5e6ea;
+
+    padding:
+        18px 22px 0;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 10;
+
+}
+
+
+/* =====================
+   LOGO
+===================== */
+
+.logo {
+
+    display: block;
+
+    width: fit-content;
+
+    margin:
+        0 auto 14px;
+
+    font-size: 25px;
+
+    font-weight: 900;
+
+    color: #5865f2;
+
+    letter-spacing: -0.5px;
+
+}
+
+
+/* =====================
+   PESQUISA
+===================== */
+
+.search {
+
+    width: 100%;
+
+    max-width: 650px;
+
+    margin:
+        0 auto 15px;
+
+    position: relative;
+
+}
+
+
+.search input {
+
+    width: 100%;
+
+    height: 44px;
+
+    border:
+        1px solid #dddfe4;
+
+    border-radius: 13px;
+
+    padding:
+        0 45px
+        0 15px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    background: #f7f7f8;
+
+}
+
+
+.search input:focus {
+
+    border-color: #5865f2;
+
+    background: white;
+
+}
+
+
+.search-icon {
+
+    position: absolute;
+
+    right: 14px;
+
+    top: 11px;
+
+    font-size: 19px;
+
+}
+
+
+/* =====================
+   ABAS
+===================== */
+
+.tabs {
+
+    width: 100%;
+
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    height: 48px;
+
+}
+
+
+.tab {
+
+    flex: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #777b84;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    position: relative;
+
+    transition: .15s;
+
+}
+
+
+.tab:hover {
+
+    color: #5865f2;
+
+}
+
+
+.tab.active {
+
+    color: #5865f2;
+
+}
+
+
+.tab.active::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 20%;
+
+    right: 20%;
+
+    height: 3px;
+
+    border-radius:
+        3px 3px 0 0;
+
+    background: #5865f2;
+
+}
+
+
+/* =====================
+   CONTAINER
+===================== */
+
+.container {
+
+    width:
+        min(
+            1000px,
+            calc(100% - 30px)
+        );
+
+    margin:
+        30px auto
+        60px;
+
+}
+
+
+.section {
+
+    margin-bottom: 40px;
+
+}
+
+
+.section-title {
+
+    font-size: 22px;
+
+    margin-bottom: 17px;
+
+}
+
+
+/* =====================
+   POPULARES
+===================== */
+
+.popular-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.popular-card {
+
+    background: white;
+
+    border:
+        1px solid #e5e6ea;
+
+    border-radius: 16px;
+
+    padding: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    transition: 0.15s;
+
+}
+
+
+.popular-card:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 5px 18px
+        rgba(0,0,0,.06);
+
+}
+
+
+/* =====================
+   ÍCONES
+===================== */
+
+.icon {
+
+    width: 64px;
+
+    height: 64px;
+
+    border-radius: 15px;
+
+    object-fit: cover;
+
+    background: #e9ebef;
+
+    flex-shrink: 0;
+
+}
+
+
+.small-icon {
+
+    width: 52px;
+
+    height: 52px;
+
+    border-radius: 13px;
+
+}
+
+
+/* =====================
+   TEXTO
+===================== */
+
+.app-name {
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    margin-bottom: 5px;
+
+}
+
+
+.developer {
+
+    color: #777b84;
+
+    font-size: 13px;
+
+}
+
+
+.rating {
+
+    margin-top: 7px;
+
+    font-size: 13px;
+
+}
+
+
+/* =====================
+   LISTA
+===================== */
+
+.app-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+
+.app-row {
+
+    background: white;
+
+    border:
+        1px solid #e5e6ea;
+
+    border-radius: 14px;
+
+    padding:
+        13px 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    transition: .15s;
+
+}
+
+
+.app-row:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 5px 18px
+        rgba(0,0,0,.06);
+
+}
+
+
+.row-info {
+
+    flex: 1;
+
+}
+
+
+.arrow {
+
+    font-size: 22px;
+
+    color: #92959d;
+
+}
+
+
+/* =====================
+   CATEGORIA DO APP
+===================== */
+
+.app-category {
+
+    display: inline-block;
+
+    margin-top: 10px;
+
+    padding:
+        6px 10px;
+
+    border-radius: 9px;
+
+    background: #eef0ff;
+
+    color: #5865f2;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+}
+
+
+.app-category:hover {
+
+    background: #e3e6ff;
+
+}
+
+
+/* =====================
+   CATEGORIAS
+===================== */
+
+.category-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.category-card {
+
+    background: white;
+
+    border:
+        1px solid #e5e6ea;
+
+    border-radius: 16px;
+
+    padding: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    transition: .15s;
+
+}
+
+
+.category-card:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 5px 18px
+        rgba(0,0,0,.06);
+
+}
+
+
+.category-icon {
+
+    width: 52px;
+
+    height: 52px;
+
+    border-radius: 14px;
+
+    background: #eef0ff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 24px;
+
+    flex-shrink: 0;
+
+}
+
+
+.category-info {
+
+    flex: 1;
+
+}
+
+
+.category-name {
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    margin-bottom: 5px;
+
+}
+
+
+.category-number {
+
+    font-size: 12px;
+
+    color: #858891;
+
+}
+
+
+.category-arrow {
+
+    font-size: 22px;
+
+    color: #92959d;
+
+}
+
+
+/* =====================
+   VOLTAR
+===================== */
+
+.back {
+
+    display: inline-block;
+
+    margin-bottom: 22px;
+
+    color: #62656d;
+
+    font-size: 15px;
+
+}
+
+
+/* =====================
+   PÁGINA DO APP
+===================== */
+
+.app-header {
+
+    background: white;
+
+    border:
+        1px solid #e5e6ea;
+
+    border-radius: 18px;
+
+    padding: 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 24px;
+
+    width: 100%;
+
+}
+
+
+.app-header .icon {
+
+    width: 110px;
+
+    height: 110px;
+
+    border-radius: 23px;
+
+}
+
+
+.app-header > div {
+
+    flex: 1;
+
+    min-width: 0;
+
+}
+
+
+.app-header h1 {
+
+    font-size: 30px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.app-details {
+
+    margin-top: 15px;
+
+    background: white;
+
+    border:
+        1px solid #e5e6ea;
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    width: 100%;
+
+}
+
+
+.description {
+
+    line-height: 1.6;
+
+    color: #4f525a;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* =====================
+   SCREENSHOTS
+===================== */
+
+.screenshots-section {
+
+    margin-top: 30px;
+
+}
+
+
+.screenshots-title {
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+
+}
+
+
+.screenshots {
+
+    display: flex;
+
+    gap: 14px;
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+
+    padding:
+        4px 2px
+        12px;
+
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: thin;
+
+    cursor: grab;
+
+    -webkit-overflow-scrolling: touch;
+
+}
+
+
+.screenshots:active {
+
+    cursor: grabbing;
+
+}
+
+
+.screenshot {
+
+    flex:
+        0 0 260px;
+
+    height: 460px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    border:
+        1px solid #e1e2e6;
+
+    background: #e9ebef;
+
+    scroll-snap-align: start;
+
+    user-select: none;
+
+    -webkit-user-drag: none;
+
+}
+
+
+/* =====================
+   DETALHES
+===================== */
+
+.details-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    border-top:
+        1px solid #ececef;
+
+    border-bottom:
+        1px solid #ececef;
+
+    margin-bottom: 25px;
+
+}
+
+
+.detail {
+
+    padding:
+        17px 10px;
+
+}
+
+
+.detail + .detail {
+
+    border-left:
+        1px solid #ececef;
+
+}
+
+
+.detail-label {
+
+    display: block;
+
+    color: #858891;
+
+    font-size: 12px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.detail-value {
+
+    font-weight: 700;
+
+}
+
+
+/* =====================
+   BOTÃO
+===================== */
+
+.download-button {
+
+    display: block;
+
+    width: 100%;
+
+    border: 0;
+
+    border-radius: 13px;
+
+    background: #5865f2;
+
+    color: white;
+
+    padding: 16px;
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    transition: .15s;
+
+}
+
+
+.download-button:hover {
+
+    background: #4752c4;
+
+}
+
+
+/* =====================
+   DOWNLOAD
+===================== */
+
+.download-box {
+
+    max-width: 600px;
+
+    margin:
+        70px auto;
+
+    background: white;
+
+    border:
+        1px solid #e5e6ea;
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    text-align: center;
+
+}
+
+
+.download-box .icon {
+
+    width: 90px;
+
+    height: 90px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.download-box h1 {
+
+    margin-bottom: 8px;
+
+}
+
+
+.download-box p {
+
+    color: #70737b;
+
+    line-height: 1.5;
+
+    margin-bottom: 25px;
+
+}
+
+
+.warning {
+
+    background: #fff5d6;
+
+    color: #765d00;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+}
+
+
+/* =====================
+   VAZIO
+===================== */
+
+.empty {
+
+    background: white;
+
+    border:
+        1px dashed #d5d7dc;
+
+    padding: 35px;
+
+    text-align: center;
+
+    border-radius: 15px;
+
+    color: #777b84;
+
+}
+
+
+/* =====================
+   PÁGINAS INFORMATIVAS
+===================== */
+
+.info-page {
+
+    background: white;
+
+    border:
+        1px solid #e5e6ea;
+
+    border-radius: 18px;
+
+    padding: 32px;
+
+    width: 100%;
+
+}
+
+
+.info-page h1 {
+
+    font-size: 30px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.info-page h2 {
+
+    font-size: 20px;
+
+    margin-top: 30px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.info-page p {
+
+    color: #4f525a;
+
+    line-height: 1.7;
+
+    margin-bottom: 14px;
+
+}
+
+
+.info-page a {
+
+    color: #5865f2;
+
+    font-weight: 700;
+
+}
+
+
+.last-updated {
+
+    color: #858891 !important;
+
+    font-size: 13px;
+
+}
+
+
+.contact-box {
+
+    background: #f7f7f8;
+
+    border:
+        1px solid #e5e6ea;
+
+    border-radius: 15px;
+
+    padding:
+        5px 20px;
+
+    margin-top: 25px;
+
+}
+
+
+.contact-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 17px 0;
+
+}
+
+
+.contact-item + .contact-item {
+
+    border-top:
+        1px solid #e1e2e6;
+
+}
+
+
+.contact-icon {
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 12px;
+
+    background: #eef0ff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 21px;
+
+    flex-shrink: 0;
+
+}
+
+
+.contact-label {
+
+    color: #858891;
+
+    font-size: 12px;
+
+    margin-bottom: 4px;
+
+}
+
+
+.contact-value {
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    word-break: break-word;
+
+}
+
+
+/* =====================
+   RODAPÉ
+===================== */
+
+.footer {
+
+    background: white;
+
+    border-top:
+        1px solid #e5e6ea;
+
+    margin-top: 60px;
+
+}
+
+
+.footer-inner {
+
+    width:
+        min(
+            1000px,
+            calc(100% - 30px)
+        );
+
+    margin: auto;
+
+    padding: 30px 0;
+
+}
+
+
+.footer-brand {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.footer-brand strong {
+
+    color: #5865f2;
+
+    font-size: 20px;
+
+}
+
+
+.footer-brand span {
+
+    color: #777b84;
+
+    font-size: 13px;
+
+}
+
+
+.footer-links {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 18px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.footer-links a {
+
+    color: #62656d;
+
+    font-size: 13px;
+
+}
+
+
+.footer-links a:hover {
+
+    color: #5865f2;
+
+}
+
+
+.footer-copy {
+
+    color: #999ca4;
+
+    font-size: 12px;
+
+}
+
+
+/* =====================
+   MOBILE
+===================== */
+
+@media (max-width: 700px) {
+
+    .topbar {
+
+        padding:
+            15px 14px 0;
+
+    }
+
+
+    .logo {
+
+        font-size: 23px;
+
+        margin-bottom: 12px;
+
+    }
+
+
+    .search {
+
+        margin-bottom: 12px;
+
+    }
+
+
+    .tabs {
+
+        height: 46px;
+
+    }
+
+
+    .popular-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .category-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .app-header {
+
+        align-items:
+            flex-start;
+
+        padding: 22px;
+
+    }
+
+
+    .app-header .icon {
+
+        width: 85px;
+
+        height: 85px;
+
+        border-radius: 19px;
+
+    }
+
+
+    .app-header h1 {
+
+        font-size: 24px;
+
+    }
+
+
+    .details-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .detail + .detail {
+
+        border-left: 0;
+
+        border-top:
+            1px solid #ececef;
+
+    }
+
+
+    .screenshot {
+
+        flex:
+            0 0 75%;
+
+        width: 75%;
+
+        height: auto;
+
+        max-height: 430px;
+
+        aspect-ratio: 9 / 16;
+
+        object-fit: cover;
+
+    }
+
+
+    .info-page {
+
+        padding: 22px;
+
+    }
+
+
+    .info-page h1 {
+
+        font-size: 25px;
+
+    }
+
+
+    .footer-links {
+
+        flex-direction: column;
+
+        gap: 12px;
+
+    }
+
+}
