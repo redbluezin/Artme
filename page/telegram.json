@@ -1,0 +1,20 @@
+{
+    "telegram": {
+        "name": "Telegram",
+        "developer": "Telegram FZ-LLC",
+        "rating": 3.8,
+        "Categoria": 190,
+        "version": "12.8.3",
+        "size": "79 MB",
+        "android": "5.0+",
+        "description": "Mensageiro rápido e seguro, sincronizado entre seus dispositivos. Envie mensagens, fotos, vídeos e arquivos, participe de grupos e canais e aproveite recursos de comunicação e comunidades.",
+        "icon": "telegram.png",
+        "screenshots": [
+            "telegram/a1.png",
+            "telegram/a2.png",
+            "telegram/a3.png",
+            "telegram/a4.png"
+        ],
+        "download": ""
+    }
+}
