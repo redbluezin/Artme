@@ -1,0 +1,20 @@
+{
+    "terraria": {
+        "name": "Terraria",
+        "developer": "505 Games Srl",
+        "rating": 4.6,
+        "Categoria": 189,
+        "version": "1.4.5.6.4",
+        "size": "194 MB",
+        "android": "5.1+",
+        "description": "Explore, construa, lute e sobreviva em um enorme mundo sandbox. Colete recursos, enfrente inimigos e chefes, crie equipamentos e descubra tudo o que Terraria tem a oferecer.",
+        "icon": "terraria.png",
+        "screenshots": [
+            "terraria/a1.png",
+            "terraria/a2.png",
+            "terraria/a3.png",
+            "terraria/a4.png"
+        ],
+        "download": ""
+    }
+}
