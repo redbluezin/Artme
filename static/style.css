@@ -1331,6 +1331,34 @@ a {
     .footer-links {
 
         flex-direction: column;
+/* =========================
+   ANÚNCIOS
+========================= */
+
+.ad-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin: 20px auto;
+
+    overflow: hidden;
+}
+
+.ad-label {
+    color: #999ca4;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+
+    margin-bottom: 6px;
+}
+
+.ad-container iframe {
+    max-width: 100%;
+}
 
         gap: 12px;
 
